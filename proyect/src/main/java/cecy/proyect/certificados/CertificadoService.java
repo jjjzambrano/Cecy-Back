@@ -4,7 +4,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.io.FileNotFoundException;
-import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.util.ResourceUtils;
@@ -47,24 +46,17 @@ public class CertificadoService {
         Certificados certificados = findById(id);
         if (certificados.getId()==null)
             return null;
-        
-        reportParameters.put("estado", certificados.getEstado());
-        reportParameters.put("fecha",Date.valueOf(certificados.getFecha()));
-
         CustomerDTO persona = customerPerson.findCustomerById(certificados.getId());
-        reportParameters.put("nombre", persona.getNombre());
-        reportParameters.put("cedula", persona.getCedula());
+        reportParameters.put("estudiante", persona.getNombre());
 
         CustomerDTOCourse curso = customerCourse.findCustomerById(certificados.getId());
-        reportParameters.put("nombre", curso.getNombre());
-        reportParameters.put("periodo_lectivo", curso.getPeriodoLectivo());
-        reportParameters.put("paralelo", curso.getParalelo());
+        reportParameters.put("curso_nombre", curso.getNombre());
 
         JasperPrint reportJasperPrint = null;
         try {
             reportJasperPrint = JasperFillManager.fillReport(
                     JasperCompileManager.compileReport(
-                            ResourceUtils.getFile("classpath:jrxml/factura.jrxml")
+                            ResourceUtils.getFile("classpath:jrxml/Certificado.jrxml")
                                     .getAbsolutePath()) // path of the jasper report
                     , reportParameters // dynamic parameters
                     , new JREmptyDataSource());

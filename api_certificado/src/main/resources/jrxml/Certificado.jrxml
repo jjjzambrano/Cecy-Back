@@ -63,17 +63,20 @@
 				<textFieldExpression><![CDATA[$P{curso_nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="406" y="60" width="180" height="39" uuid="e54dc4cb-65f0-4c93-8b8c-93ef18bbd4b9">
+				<reportElement x="378" y="60" width="270" height="39" uuid="e54dc4cb-65f0-4c93-8b8c-93ef18bbd4b9">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="22" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nombres}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="201" y="62" width="199" height="37" uuid="5c254df0-4a41-42aa-a2e4-9a557f47b303"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
+				<reportElement x="97" y="62" width="270" height="37" uuid="5c254df0-4a41-42aa-a2e4-9a557f47b303">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="22" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{apellidos}]]></textFieldExpression>
@@ -87,7 +90,7 @@
 Instituto Superior Tecnologico de Turismo y Patrimonio YAVIRAC]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="140" y="102" width="489" height="1" forecolor="#382F2F" uuid="39ed20ca-ab0b-4126-826e-b1c383968c5a"/>
+				<reportElement x="80" y="99" width="579" height="1" forecolor="#382F2F" uuid="39ed20ca-ab0b-4126-826e-b1c383968c5a"/>
 				<graphicElement>
 					<pen lineWidth="1.0"/>
 				</graphicElement>

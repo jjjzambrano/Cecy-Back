@@ -8,6 +8,11 @@ import java.util.HashMap;
 import java.util.Map;
 import org.springframework.util.ResourceUtils;
 
+import cecy.api_certificado.certificados_generados.CertificadosGenerados;
+import cecy.api_certificado.certificados_generados.CertificadosGeneradosService;
+import cecy.api_certificado.codigos.Codigos;
+import cecy.api_certificado.codigos.CodigosController;
+import cecy.api_certificado.codigos.CodigosService;
 import cecy.api_certificado.cursos.CustomerCourse;
 import cecy.api_certificado.cursos.CustomerDTOCourse;
 import cecy.api_certificado.personas.CustomerDTOPerson;
@@ -20,42 +25,61 @@ import net.sf.jasperreports.engine.JasperPrint;
 
 @Service
 public class CertificadosService {
-    @Autowired CustomerPerson customerPerson;
-    @Autowired CustomerCourse customerCourse;
-    @Autowired CertificadosRepository entityRepository;
+    @Autowired
+    CustomerPerson customerPerson;
+    @Autowired
+    CustomerCourse customerCourse;
+    @Autowired
+    CertificadosRepository entityRepository;
+    @Autowired
+    CodigosService codigosService;
+    @Autowired
+    CertificadosGeneradosService generarCertificadosService;
 
-    public Certificados save(Certificados entity){
+    public Certificados save(Certificados entity) {
         return entityRepository.save(entity);
     }
 
-    public Certificados findById( Long id){
+    public Certificados findById(Long id) {
         return entityRepository.findById(id).orElse(new Certificados());
     }
 
-    public void deleteById(Long id){
+    public void deleteById(Long id) {
         entityRepository.deleteById(id);
     }
 
-    public List<Certificados> findAll(){
+    public List<Certificados> findAll() {
         return entityRepository.findAll();
     }
-    
+
     public JasperPrint getCertificadosReporte(Long id) {
 
         Map<String, Object> reportParameters = new HashMap<String, Object>();
         Certificados certificados = findById(id);
-        if (certificados.getId()==null)
+        if (certificados.getId() == null)
             return null;
-        CustomerDTOPerson persona = customerPerson.findPersonByIdDto(certificados.getId());
+        CustomerDTOPerson persona = customerPerson.findPersonByIdDto(certificados.getUserId());
         reportParameters.put("nombres", persona.getNombres());
         reportParameters.put("apellidos", persona.getApellidos());
-        reportParameters.put("rector", persona.getNombres() + persona.getApellidos());
-        reportParameters.put("coordinador", persona.getNombres() + persona.getApellidos());
-        
+        reportParameters.put("rector", persona.getNombres() + " " + persona.getApellidos());
+        reportParameters.put("coordinador", persona.getNombres() + " " + persona.getApellidos());
 
-        CustomerDTOCourse curso = customerCourse.findCourseByIdDto(certificados.getId());
+        CustomerDTOCourse curso = customerCourse.findCourseByIdDto(certificados.getCourseId());
         reportParameters.put("curso_nombre", curso.getName());
 
+        if (codigosService.findAll() == null)
+            return null;
+        List<Codigos> codigos = codigosService.findAll();
+
+        for (Codigos codigo : codigos) {
+            if (codigo.isEstado() == true) {
+                //generarCertificadosService.save(CertificadosGenerados entity)
+            }
+
+            System.out.print(codigo);
+        }
+        // if (codigosService.findById(id) == codigosService)
+        // return null;
         JasperPrint reportJasperPrint = null;
         try {
             reportJasperPrint = JasperFillManager.fillReport(

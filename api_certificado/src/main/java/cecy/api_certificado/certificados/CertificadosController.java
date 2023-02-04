@@ -60,8 +60,7 @@ public class CertificadosController {
 		headers.setContentType(MediaType.APPLICATION_PDF);
 		headers.setContentDispositionFormData("filename", "certificado.pdf");
 		// create the report in PDF format
-		return new ResponseEntity<byte[]>
-(JasperExportManager.exportReportToPdf(certificados), headers, HttpStatus.OK);
+		return new ResponseEntity<byte[]>(JasperExportManager.exportReportToPdf(certificados), headers, HttpStatus.OK);
 
 	}
 }

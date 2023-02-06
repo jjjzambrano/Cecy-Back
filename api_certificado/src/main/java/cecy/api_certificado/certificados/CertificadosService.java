@@ -7,12 +7,6 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.util.ResourceUtils;
-
-import cecy.api_certificado.certificados_generados.CertificadosGenerados;
-import cecy.api_certificado.certificados_generados.CertificadosGeneradosService;
-import cecy.api_certificado.codigos.Codigos;
-import cecy.api_certificado.codigos.CodigosController;
-import cecy.api_certificado.codigos.CodigosService;
 import cecy.api_certificado.cursos.CustomerCourse;
 import cecy.api_certificado.cursos.CustomerDTOCourse;
 import cecy.api_certificado.personas.CustomerDTOPerson;
@@ -31,10 +25,6 @@ public class CertificadosService {
     CustomerCourse customerCourse;
     @Autowired
     CertificadosRepository entityRepository;
-    @Autowired
-    CodigosService codigosService;
-    @Autowired
-    CertificadosGeneradosService generarCertificadosService;
 
     public Certificados save(Certificados entity) {
         return entityRepository.save(entity);
@@ -67,19 +57,6 @@ public class CertificadosService {
         CustomerDTOCourse curso = customerCourse.findCourseByIdDto(certificados.getCourseId());
         reportParameters.put("curso_nombre", curso.getName());
 
-        if (codigosService.findAll() == null)
-            return null;
-        List<Codigos> codigos = codigosService.findAll();
-
-        for (Codigos codigo : codigos) {
-            if (codigo.isEstado() == true) {
-                //generarCertificadosService.save(CertificadosGenerados entity)
-            }
-
-            System.out.print(codigo);
-        }
-        // if (codigosService.findById(id) == codigosService)
-        // return null;
         JasperPrint reportJasperPrint = null;
         try {
             reportJasperPrint = JasperFillManager.fillReport(

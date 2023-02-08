@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.4" use-changelog="false" last-position="0,270" last-zoom="0.9" max-obj-count="10"
+	 default-schema="public" default-owner="postgres"
+	 layers="Default layer"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="new_database" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layers="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="cursos" layers="0" collapse-mode="2" max-obj-count="9" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="160" y="460"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre" not-null="true">
+		<type name="character varying" length="200"/>
+	</column>
+	<column name="gratis" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="cupos" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="estado" not-null="true">
+		<type name="character varying" length="50"/>
+	</column>
+	<column name="duracion" not-null="true">
+		<type name="character varying" length="100"/>
+	</column>
+	<column name="descripcion" not-null="true">
+		<type name="varchar" length="500"/>
+	</column>
+	<column name="carreras_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="pk_cursos" type="pk-constr" table="public.cursos">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="dias" layers="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1000" y="360"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="descripcion" not-null="true">
+		<type name="character varying" length="50"/>
+	</column>
+	<constraint name="pk_dias" type="pk-constr" table="public.dias">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="horas" layers="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1000" y="500"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="descripcion" not-null="true">
+		<type name="character varying" length="50"/>
+	</column>
+	<constraint name="pk_horas" type="pk-constr" table="public.horas">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="requerimientos" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="480" y="760"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="descripcion" not-null="true">
+		<type name="character varying" length="100"/>
+	</column>
+	<column name="cursos_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="pk_requerimientos" type="pk-constr" table="public.requerimientos">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="pre_requsitos" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="60" y="780"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="descripcion" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="cursos_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="pk_pre_requisitos" type="pk-constr" table="public.pre_requsitos">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="horarios" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="560" y="460"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="dias_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="horas_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="cursos_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="pk_cursos_horario" type="pk-constr" table="public.horarios">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="instructores" layers="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="240" y="20"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombres_apellidos" not-null="true">
+		<type name="character varying" length="100"/>
+	</column>
+	<constraint name="instructores_pk" type="pk-constr" table="public.instructores">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="carreras" layers="0" collapse-mode="2" max-obj-count="2" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="540" y="260"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="descripcion">
+		<type name="character varying" length="50"/>
+	</column>
+	<constraint name="carreras_pk" type="pk-constr" table="public.carreras">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="cursos_instructores" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="180" y="200"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="cursos_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="instructores_id" not-null="true">
+		<type name="smallint" length="0"/>
+	</column>
+	<constraint name="pk_cursos_instructores" type="pk-constr" table="public.cursos_instructores">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="fk_cursos_carreras" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.carreras" table="public.cursos">
+	<columns names="carreras_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_requerimientos_cursos" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.cursos" table="public.requerimientos">
+	<columns names="cursos_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_pre_requisitos_cursos" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.cursos" table="public.pre_requsitos">
+	<columns names="cursos_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_dias_horarios" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.dias" table="public.horarios">
+	<columns names="dias_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_horas_horarios" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.horas" table="public.horarios">
+	<columns names="horas_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_cursos_horarios" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.cursos" table="public.horarios">
+	<columns names="cursos_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_cursos_instructores" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.cursos" table="public.cursos_instructores">
+	<columns names="cursos_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="fk_instructores_cursos" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.instructores" table="public.cursos_instructores">
+	<columns names="instructores_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_cursos_horario_dias" type="relfk" layers="0"
+	 src-table="public.horarios"
+	 dst-table="public.dias" reference-fk="fk_dias_horarios"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_cursos_horario_horas" type="relfk" layers="0"
+	 src-table="public.horarios"
+	 dst-table="public.horas" reference-fk="fk_horas_horarios"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_cursos_horario_cursos" type="relfk" layers="0"
+	 src-table="public.horarios"
+	 dst-table="public.cursos" reference-fk="fk_cursos_horarios"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_pre_requsitos_cursos" type="relfk" layers="0"
+	 src-table="public.pre_requsitos"
+	 dst-table="public.cursos" reference-fk="fk_pre_requisitos_cursos"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_requerimientos_cursos" type="relfk" layers="0"
+	 src-table="public.requerimientos"
+	 dst-table="public.cursos" reference-fk="fk_requerimientos_cursos"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_cursos_instructores_cursos" type="relfk" layers="0"
+	 src-table="public.cursos_instructores"
+	 dst-table="public.cursos" reference-fk="fk_cursos_instructores"
+	 src-required="false" dst-required="true">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="rel_cursos_instructores_instructores" type="relfk" layers="0"
+	 src-table="public.cursos_instructores"
+	 dst-table="public.instructores" reference-fk="fk_instructores_cursos"
+	 src-required="false" dst-required="true"/>
+
+<relationship name="rel_cursos_carreras" type="relfk" layers="0"
+	 src-table="public.cursos"
+	 dst-table="public.carreras" reference-fk="fk_cursos_carreras"
+	 src-required="false" dst-required="true"/>
+
+</dbmodel>

@@ -55,7 +55,7 @@ public class CertificadosService {
         reportParameters.put("coordinador", persona.getNombres() + " " + persona.getApellidos());
 
         CustomerDTOCourse curso = customerCourse.findCourseByIdDto(certificados.getCourseId());
-        reportParameters.put("curso_nombre", curso.getName());
+        reportParameters.put("curso_nombre", curso.getNombre());
 
         JasperPrint reportJasperPrint = null;
         try {

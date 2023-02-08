@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class CustomerDTOCourse {
     private long id;
-    private String name;
-    private LocalDate startDate;
-    private LocalDate finishDate;
+    private String nombre;
+    private LocalDate fechaInicio;
+    private LocalDate fechaFin;
 }

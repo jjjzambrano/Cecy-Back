@@ -1,21 +1,21 @@
-package cecy.cecy_backend.cecy_certificados.codigos;
+package cecy.cecy_backend.cecy_certificados.prueba2;
 
-import cecy.cecy_backend.cecy_certificados.matriculas.Matriculas;
-import cecy.cecy_backend.cecy_certificados.reportes.Reporte;
+import cecy.cecy_backend.cecy_certificados.prueba1.Prueba1;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
-
 @Data
 @Entity
-public class Codigos {
+public class PruebaLinea {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String codigo;
+
+    @ManyToOne
+    private Prueba1 prueba1;
 }

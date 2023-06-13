@@ -2,6 +2,7 @@ package cecy.cecy_backend.cecy_certificados.matriculas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -12,8 +13,10 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import cecy.cecy_backend.cecy_certificados.asistencia.Asistencia;
 import cecy.cecy_backend.cecy_certificados.catalogos.Catalogos;
+import cecy.cecy_backend.cecy_certificados.codigos.Codigos;
 import cecy.cecy_backend.cecy_certificados.estudiantes.Estudiantes;
 import cecy.cecy_backend.cecy_certificados.observaciones.Observaciones;
+import cecy.cecy_backend.cecy_certificados.reportes.Reporte;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -21,6 +24,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
@@ -68,4 +72,8 @@ public class Matriculas {
     // @JsonBackReference
     // @JsonProperty(access  = JsonProperty.Access.READ_ONLY)
     Estudiantes estudiantes;
+
+    @ManyToMany(mappedBy = "matriculas",fetch = FetchType.LAZY)
+    @JsonBackReference
+    private Set<Reporte> reportes;
 }

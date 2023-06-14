@@ -2,10 +2,12 @@ package cecy.cecy_backend.cecy_certificados.reportes;
 
 
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -56,8 +58,8 @@ public class ReporteController {
     public void deleteById(@PathVariable Long id){
         reporteService.deleteById(id);
     }
-    @GetMapping("/pdf/{id}/")
-    public ResponseEntity<byte[]> getReporte(@PathVariable long id) throws JRException {
+    @GetMapping("/xls/{id}/")
+    /*public ResponseEntity<byte[]> getReporte(@PathVariable long id) throws JRException {
 
         JasperPrint reporte = reporteService.getReporte(id);
 
@@ -71,5 +73,20 @@ public class ReporteController {
         // create the report in PDF format
         return new ResponseEntity<byte[]>(JasperExportManager.exportReportToPdf(reporte), headers, HttpStatus.OK);
 
+    }*/
+    public ResponseEntity<byte[]> exportXls(@PathVariable Long id) throws JRException, FileNotFoundException {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Content-Type", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=UTF-8");
+        var contentDisposition = ContentDisposition.builder("attachment")
+                .filename("reporte" + ".xls").build();
+        headers.setContentDisposition(contentDisposition);
+        return ResponseEntity.ok()
+                .headers(headers)
+                .body(reporteService.exportXls(id));
     }
+
+
+
+
+
 }

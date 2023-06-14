@@ -1,6 +1,7 @@
 package cecy.cecy_backend.cecy_certificados.reportes;
 
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.Period;
@@ -24,6 +25,9 @@ import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.export.JRXlsExporter;
+import net.sf.jasperreports.export.SimpleExporterInput;
+import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 
 @Service
 public class ReporteService {
@@ -113,5 +117,19 @@ public class ReporteService {
             e.printStackTrace();
         }
         return reportJasperPrint;
+    }
+
+    public byte[] exportToXls( Long id) throws JRException{
+        ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
+        SimpleOutputStreamExporterOutput output = new SimpleOutputStreamExporterOutput(byteArray);
+        JRXlsExporter exporter = new JRXlsExporter();
+        exporter.setExporterInput(new SimpleExporterInput(getReporte(id)));
+        exporter.setExporterOutput(output);
+        exporter.exportReport();
+        output.close();
+        return byteArray.toByteArray();
+    }
+    public byte[] exportXls(Long id) throws JRException {
+        return exportToXls(id);
     }
 }

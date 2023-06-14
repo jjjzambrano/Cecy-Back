@@ -197,11 +197,8 @@ FORMULARIO DE ASIGNACIÓN DE CÓDIGOS A ESTUDIANES
 				<dataSourceExpression><![CDATA[$P{listaReporte}]]></dataSourceExpression>
 				<subreportExpression><![CDATA["classpath:jrxml/reporteLista.jasper"]]></subreportExpression>
 			</subreport>
-			<rectangle>
-				<reportElement x="2" y="7" width="999" height="30" forecolor="#215967" backcolor="#215967" uuid="b1fe8830-694b-45fd-bc57-b16383862446"/>
-			</rectangle>
 			<staticText>
-				<reportElement x="2" y="8" width="30" height="30" forecolor="#FCFCFC" uuid="b2476656-c581-47f4-ac35-88c4d58b2fcb"/>
+				<reportElement mode="Opaque" x="2" y="8" width="30" height="30" forecolor="#FCFCFC" backcolor="#215967" uuid="b2476656-c581-47f4-ac35-88c4d58b2fcb"/>
 				<box>
 					<pen lineWidth="3.0" lineStyle="Solid"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -215,7 +212,7 @@ FORMULARIO DE ASIGNACIÓN DE CÓDIGOS A ESTUDIANES
 				<text><![CDATA[No. ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="266" y="8" width="110" height="30" forecolor="#FCFCFC" uuid="78ccf964-0468-4283-a710-88e4e4cdd30d"/>
+				<reportElement mode="Opaque" x="266" y="8" width="110" height="30" forecolor="#FCFCFC" backcolor="#215967" uuid="78ccf964-0468-4283-a710-88e4e4cdd30d"/>
 				<box>
 					<pen lineWidth="3.0" lineStyle="Solid"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -229,7 +226,7 @@ FORMULARIO DE ASIGNACIÓN DE CÓDIGOS A ESTUDIANES
 				<text><![CDATA[Número de Cédula ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="376" y="8" width="90" height="30" forecolor="#FCFCFC" uuid="d4d1825e-d1d0-465d-86b1-61576448caab"/>
+				<reportElement mode="Opaque" x="376" y="8" width="90" height="30" forecolor="#FCFCFC" backcolor="#215967" uuid="d4d1825e-d1d0-465d-86b1-61576448caab"/>
 				<box>
 					<pen lineWidth="3.0"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -243,7 +240,7 @@ FORMULARIO DE ASIGNACIÓN DE CÓDIGOS A ESTUDIANES
 				<text><![CDATA[Autodefinición ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="466" y="8" width="139" height="30" forecolor="#FCFCFC" uuid="4811e947-8147-4b7e-bc93-560f5098698a"/>
+				<reportElement mode="Opaque" x="466" y="8" width="139" height="30" forecolor="#FCFCFC" backcolor="#215967" uuid="4811e947-8147-4b7e-bc93-560f5098698a"/>
 				<box>
 					<pen lineWidth="3.0"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -257,7 +254,7 @@ FORMULARIO DE ASIGNACIÓN DE CÓDIGOS A ESTUDIANES
 				<text><![CDATA[Posee alguna Discapacidad ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="32" y="8" width="106" height="30" forecolor="#FCFCFC" uuid="97c52de9-5b4c-43b5-a9c0-cb5b44231dfd"/>
+				<reportElement mode="Opaque" x="32" y="8" width="106" height="30" forecolor="#FCFCFC" backcolor="#215967" uuid="97c52de9-5b4c-43b5-a9c0-cb5b44231dfd"/>
 				<box>
 					<pen lineWidth="3.0" lineStyle="Solid"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -271,7 +268,7 @@ FORMULARIO DE ASIGNACIÓN DE CÓDIGOS A ESTUDIANES
 				<text><![CDATA[Nombres ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="138" y="8" width="128" height="30" forecolor="#FCFCFC" uuid="15f4ea7b-e382-4b32-a83c-ba9842edb301"/>
+				<reportElement mode="Opaque" x="138" y="8" width="128" height="30" forecolor="#FCFCFC" backcolor="#215967" uuid="15f4ea7b-e382-4b32-a83c-ba9842edb301"/>
 				<box>
 					<pen lineWidth="3.0" lineStyle="Solid"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -285,7 +282,7 @@ FORMULARIO DE ASIGNACIÓN DE CÓDIGOS A ESTUDIANES
 				<text><![CDATA[Apellidos]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="605" y="8" width="64" height="30" forecolor="#FCFCFC" uuid="6acd3553-82ec-412e-b8d0-eae9629678ea"/>
+				<reportElement mode="Opaque" x="605" y="8" width="64" height="30" forecolor="#FCFCFC" backcolor="#215967" uuid="6acd3553-82ec-412e-b8d0-eae9629678ea"/>
 				<box>
 					<pen lineWidth="3.0"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -299,7 +296,7 @@ FORMULARIO DE ASIGNACIÓN DE CÓDIGOS A ESTUDIANES
 				<text><![CDATA[Género ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="669" y="8" width="62" height="30" forecolor="#FCFCFC" uuid="18feb283-f775-4957-b9f6-45e2cc4dcf65"/>
+				<reportElement mode="Opaque" x="669" y="8" width="62" height="30" forecolor="#FCFCFC" backcolor="#215967" uuid="18feb283-f775-4957-b9f6-45e2cc4dcf65"/>
 				<box>
 					<pen lineWidth="3.0"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -313,7 +310,7 @@ FORMULARIO DE ASIGNACIÓN DE CÓDIGOS A ESTUDIANES
 				<text><![CDATA[Edad ]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="731" y="8" width="158" height="30" forecolor="#FCFCFC" uuid="d7aad737-1eb3-4dc6-b061-2cd4c0e49adb"/>
+				<reportElement mode="Opaque" x="731" y="8" width="158" height="30" forecolor="#FCFCFC" backcolor="#215967" uuid="d7aad737-1eb3-4dc6-b061-2cd4c0e49adb"/>
 				<box>
 					<pen lineWidth="3.0"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -327,7 +324,7 @@ FORMULARIO DE ASIGNACIÓN DE CÓDIGOS A ESTUDIANES
 				<text><![CDATA[Correo Electrónico]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="889" y="8" width="113" height="30" forecolor="#FCFCFC" uuid="d85ff5d5-262e-4607-908b-6e25a827999d"/>
+				<reportElement mode="Opaque" x="889" y="8" width="113" height="30" forecolor="#FCFCFC" backcolor="#215967" uuid="d85ff5d5-262e-4607-908b-6e25a827999d"/>
 				<box>
 					<pen lineWidth="3.0"/>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>

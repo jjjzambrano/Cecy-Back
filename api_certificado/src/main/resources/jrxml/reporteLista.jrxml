@@ -19,7 +19,9 @@
 			<property name="com.jaspersoft.studio.layout"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
-				<reportElement x="11" y="-19" width="106" height="18" uuid="f50d3605-a4db-4c54-9b28-ef278c700565"/>
+				<reportElement x="10" y="-20" width="106" height="18" uuid="f50d3605-a4db-4c54-9b28-ef278c700565">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.75"/>
 				</box>
@@ -29,7 +31,9 @@
 				<textFieldExpression><![CDATA[$F{nombreEstudiante}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="117" y="-19" width="128" height="18" uuid="a857fbf9-4703-4532-9a04-6d56f8918e4e"/>
+				<reportElement x="116" y="-20" width="128" height="18" uuid="a857fbf9-4703-4532-9a04-6d56f8918e4e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -43,7 +47,10 @@
 				<textFieldExpression><![CDATA[$F{apellidoEstudiante}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="-19" y="-19" width="30" height="18" uuid="18cb80e7-1658-45c4-866e-fd22b201f62c"/>
+				<reportElement x="-20" y="-20" width="30" height="18" uuid="18cb80e7-1658-45c4-866e-fd22b201f62c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.75"/>
 					<topPen lineWidth="0.75" lineStyle="Solid" lineColor="#000000"/>
@@ -57,7 +64,9 @@
 				<textFieldExpression><![CDATA[$V{nO}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="245" y="-19" width="110" height="18" uuid="b86c2e39-7911-4a43-a1d6-529697c10f07"/>
+				<reportElement x="244" y="-20" width="110" height="18" uuid="b86c2e39-7911-4a43-a1d6-529697c10f07">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.75"/>
 				</box>
@@ -67,7 +76,9 @@
 				<textFieldExpression><![CDATA[$F{noCedula}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="355" y="-19" width="90" height="18" uuid="6222da16-668b-4263-9c7d-67ad98194afe"/>
+				<reportElement x="354" y="-20" width="90" height="18" uuid="6222da16-668b-4263-9c7d-67ad98194afe">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.75"/>
 				</box>
@@ -77,7 +88,9 @@
 				<textFieldExpression><![CDATA[$F{autodefinicion}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="445" y="-19" width="139" height="18" uuid="1c75cafb-c554-412f-80ee-dd93416f2ad7"/>
+				<reportElement x="444" y="-20" width="139" height="18" uuid="1c75cafb-c554-412f-80ee-dd93416f2ad7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.75"/>
 				</box>
@@ -87,7 +100,9 @@
 				<textFieldExpression><![CDATA[$F{discapacidad}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="584" y="-19" width="66" height="18" uuid="7e29f249-1344-457d-abf6-9e829cda7859"/>
+				<reportElement x="583" y="-20" width="64" height="18" uuid="7e29f249-1344-457d-abf6-9e829cda7859">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.75"/>
 				</box>
@@ -97,7 +112,9 @@
 				<textFieldExpression><![CDATA[$F{genero}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="710" y="-19" width="128" height="18" uuid="c2822ccf-ce51-4883-b0bf-38bbf72d3bf1"/>
+				<reportElement x="709" y="-20" width="158" height="18" uuid="c2822ccf-ce51-4883-b0bf-38bbf72d3bf1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.75"/>
 				</box>
@@ -107,7 +124,9 @@
 				<textFieldExpression><![CDATA[$F{correo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="838" y="-19" width="142" height="18" uuid="aacab96a-72bc-4ee4-9599-8a85e313c99a"/>
+				<reportElement x="867" y="-20" width="113" height="18" uuid="aacab96a-72bc-4ee4-9599-8a85e313c99a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.75"/>
 				</box>
@@ -117,7 +136,9 @@
 				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="650" y="-19" width="60" height="18" uuid="703aeceb-e7e6-4fdd-86a3-f426ba74c58d"/>
+				<reportElement x="647" y="-20" width="62" height="18" uuid="703aeceb-e7e6-4fdd-86a3-f426ba74c58d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.75"/>
 				</box>

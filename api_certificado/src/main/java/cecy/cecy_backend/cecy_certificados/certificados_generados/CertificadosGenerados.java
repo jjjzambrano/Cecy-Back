@@ -19,10 +19,10 @@ public class CertificadosGenerados {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @OneToOne()
+    /*@OneToOne()
     @JoinColumn(name = "certificado_id", referencedColumnName = "id")
     private Certificados certicadoId;
     @OneToOne()
     @JoinColumn(name = "code_id", referencedColumnName = "id")
-    private Codigos codigos;
+    private Codigos codigos;*/
 }

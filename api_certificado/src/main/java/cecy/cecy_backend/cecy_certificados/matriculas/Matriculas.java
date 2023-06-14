@@ -72,8 +72,4 @@ public class Matriculas {
     // @JsonBackReference
     // @JsonProperty(access  = JsonProperty.Access.READ_ONLY)
     Estudiantes estudiantes;
-
-    @ManyToMany(mappedBy = "matriculas",fetch = FetchType.LAZY)
-    @JsonBackReference
-    private Set<Reporte> reportes;
 }

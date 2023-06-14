@@ -18,4 +18,6 @@ public class Codigos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String codigo;
+    @ManyToOne
+    private Matriculas matriculas;
 }
